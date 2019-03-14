@@ -2,13 +2,16 @@
   "name": "js-demo",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server/bin/www.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:server": "cross-env NODE_ENV=dev nodemon ./server/bin/www.js",
+    "prd": "cross-env NODE_ENV=production nodemon ./server/bin/www.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "gulp": "^4.0.0"
+    "cross-env": "^5.2.0",
+    "nodemon": "^1.18.10"
   }
 }
