@@ -28,9 +28,9 @@ const getDetail = (id) => {
 
 const newBlog = (blogData= {}) => {
     // blogData 是一个博客对象， 包含所有属性
-    console.log('new blog data', blogData)
+    console.log('new blog data...', blogData)
     return {
-        id: 3 // 表示新建博客，插入到数据表里的id
+        id: 3, // 表示新建博客，插入到数据表里的id
     }
 }
 

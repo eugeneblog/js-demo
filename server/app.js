@@ -9,7 +9,7 @@ const getPostData = (req) => {
             resolve({})
             return
         }
-        if (req.headers['Content-type'] !== 'application/json') {
+        if (req.headers['content-type'] !== 'application/json') {
             resolve({})
             return
         }
@@ -35,7 +35,6 @@ const serverHandle = (req, res) => {
     res.setHeader('Content-type', 'application/json')
     const url = req.url
     req.path = url.split('?')[0]
-
     //解析query
     req.query = querystring.parse(url.split('?')[0])
 
@@ -51,7 +50,7 @@ const serverHandle = (req, res) => {
             )
             return
         }
-        
+
         // 处理user路由
         const userData = handleUserRouter(req, res)
         if (userData) {
@@ -60,11 +59,12 @@ const serverHandle = (req, res) => {
             )
             return
         }
+
+        // 未命中路由返回404
+        res.writeHead(404, {"Content-type": "text/plain"})
+        res.write("404 Not Found\n")
+        res.end()
     })
-    // 未命中路由返回404
-    res.writeHead(404, {"Content-type": "text/plain"})
-    res.write("404 Not Found\n")
-    res.end()
 }
 
 module.exports = serverHandle
