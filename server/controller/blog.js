@@ -33,9 +33,24 @@ const newBlog = (blogData= {}) => {
         id: 3, // 表示新建博客，插入到数据表里的id
     }
 }
+const updateBlog = (id, blogData={}) => {
+    // id 要更新博客的id
+    console.log(`
+    ≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥
+    ≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥≥
+    update successful
+    `)
+    return true
+}
+const delBlog = (id) => {
+    // 要删除博客的id
+    return true
+}
 
 module.exports = {
     getList,
     getDetail,
-    newBlog
+    newBlog,
+    updateBlog,
+    delBlog
 }
